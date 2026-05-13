@@ -1,0 +1,148 @@
+# cs-concept-builder polish log
+
+_Polish target for W20 (issue [#4](https://github.com/jherrodthomas/automotive-skills-suite/issues/4)). Reviewer: autonomous daily-standup task._
+
+---
+
+## 2026-05-13 — first POLISH pass
+
+**Mode:** POLISH (Wednesday)
+**File reviewed:** `skills/cs-concept-builder.skill` (ZIP archive; SKILL.md is 9,760 bytes / ~120 lines).
+**DoD recap (from `docs/weekly/WEEK-2026-W20.md`):**
+description reviewed for accuracy of the six security properties (AAICAN), and
+trigger phrases include both formal terms (CSR derivation, CAL allocation) and
+casual framings ("derive cyber controls from goals").
+
+### What's good
+
+- **AAICAN list is correct, complete, and in canonical order.** The six properties
+  appear as `(Authentication, Authorization, Integrity, Confidentiality, Availability,
+  Non-repudiation)` — all six letters of AAICAN, no duplicates, no omissions — and
+  all sit comfortably inside the first 400 chars of the description (the parenthetical
+  ends at char ~358). This is the DoD's "accuracy" check; passes cleanly.
+- **Frontmatter is clean.** Both required keys present (`name`, `description`); no
+  drift fields; YAML parses without complaint. Description is 784 / 1024 chars with
+  ~240 chars of headroom — comfortable runway for a polish-only re-write without
+  hitting the cap.
+- **Pipeline framing is explicit and correct.** The description names both upstream
+  (`reading a CS Goals xlsx (produced by cs-goals-builder)`) and downstream (`produces
+  the CSI (Cybersecurity Implementation) hand-off`) artefacts, which is exactly the
+  cross-builder linkage that prevents users from invoking this skill before the TARA →
+  CS Goals step has run. Same pattern as `fsc-builder`'s HARA→FSC linkage.
+- **Workflow doc is strong.** Step 2's enumeration of node types (gateways → ECUs →
+  memory → key stores → channels → debug-ifs) is the right order — network-facing
+  first, then progressively inward — and the closing sentinel question ("Is there
+  any node that, if compromised or disabled, could violate a cybersecurity goal but
+  isn't on this list?") is the kind of forcing-function that catches the 10% of nodes
+  analysts skip on first pass. Mentor-quality.
+- **Common-pitfalls section earns its keep.** All five anti-patterns (skipped debug
+  interfaces, missing key-management CSRs, authn-vs-authz conflation, over-specifying
+  algorithms, missing non-repudiation for audit-critical actions) are real failure
+  modes a junior security engineer hits. None are filler.
+- **Six-property derivation prose is concrete.** Each property comes with the
+  attacker-question framing ("Does the attacker impersonate or forge identity?" etc.).
+  That's what makes the property selection mechanical rather than judgment-only.
+
+### What to fix
+
+1. **DoD miss: "CAL allocation" is NOT in the description at all.**
+   The closest phrasing is `allocates CAL per architectural element` (char ~430),
+   which uses the verb form but not the noun phrase the DoD asks for. Severity: **low**
+   — the description still triggers reliably on the surrounding terms (CSR, six
+   security properties, Cybersecurity Concept), but per the strict W20 DoD this is the
+   one missing formal trigger.
+
+2. **DoD miss: "CSR derivation" is past the 400-char threshold.**
+   The phrase first appears at char ~607 inside the "Use this skill whenever the user
+   mentions Cybersecurity Concept, CSR derivation, threat modeling requirements, or
+   deriving cybersecurity controls from goals" trigger list. Falls inside the
+   description (under the 1024-char cap), but outside the 400-char fast-trigger
+   window. Same shape as yesterday's `hara-builder` "safety goal" miss. Severity:
+   **low**.
+
+3. **DoD partial: casual framings are thin.**
+   Only one casual variant is present (`deriving cybersecurity controls from goals`).
+   The DoD's example (`derive cyber controls from goals`) is essentially covered but
+   not verbatim, and there are no alternate-phrasing safety nets like the ones
+   `hara-builder` ships ("'I need the safety analysis for this ECU' or 'what is the
+   ASIL for X'"). Severity: **low**, optional.
+
+4. **`CSI handoff` trigger only appears with the long form.**
+   The description writes `CSI (Cybersecurity Implementation) hand-off` (with paren
+   gloss and hyphen). A user typing "do the CSI handoff for this ECU" (no parens, no
+   hyphen) will still hit `CSI`, but a pattern-matching trigger pass on the literal
+   phrase `CSI handoff` would miss. Severity: **low**, optional.
+
+### Suggested edits (NOT applied this run)
+
+The autonomous-edit allowlist for the daily-standup task is narrow — typo / over-length
+/ missing-required-frontmatter-field. None of the four findings match that list:
+all are trigger-coverage edits, which are editorial rewrites, not surgical fixes.
+**No edits committed today.** Captured here for the next human review pass.
+
+A minimal proposed re-write of the description (still inside 1024 chars, AAICAN
+preserved verbatim, all four DoD trigger phrases now in the first 400 chars):
+
+```
+description: Generate an audit-ready ISO/SAE 21434 Cybersecurity Concept workbook
+  with CSR derivation, CAL allocation, and CSI handoff by reading a CS Goals xlsx
+  (produced by cs-goals-builder) plus a system block-diagram JSON. Builds one
+  requirement-derivation tree per cybersecurity goal across six security
+  properties (Authentication, Authorization, Integrity, Confidentiality,
+  Availability, Non-repudiation), generates one CSR per goal-property-node
+  combination, allocates CAL per architectural element, proposes verification
+  methods per CAL, and produces the CSI (Cybersecurity Implementation) hand-off.
+  Use this skill whenever the user mentions Cybersecurity Concept, CSR derivation,
+  CAL allocation, threat-modeling requirements, or deriving cybersecurity controls
+  from goals — even casual framings like "derive cyber controls from goals" or
+  "what CSRs do I need for this ECU". Always use this skill instead of producing
+  a freeform Cybersecurity Concept in chat.
+```
+
+Quick stats on the proposed rewrite:
+
+| Check | Result |
+|---|---|
+| Char count | ~970 (under the 1024 cap) |
+| `CSR derivation` first appears | char ~85 (inside 400) |
+| `CAL allocation` first appears | char ~99 (inside 400) |
+| `CSI handoff` first appears | char ~117 (inside 400) |
+| AAICAN list intact | yes, char ~300–415 |
+| Casual framings | two (`derive cyber controls from goals`, `what CSRs do I need for this ECU`) |
+
+### Other observations (not fixes, just notes for future passes)
+
+- The SKILL.md body is **prose with one well-bounded reference-table block** for the
+  10 output tabs — matches system style guidance. Don't refactor it.
+- The "Files in this skill" tree at the bottom is accurate against `unzip -l
+  skills/cs-concept-builder.skill`: SKILL.md, scripts/{generate_cs_concept.py,
+  cs_goals_reader.py, recalc.py, office/{__init__.py, soffice.py}}, references/
+  {methodology.md, csr_templates.md}, examples/sample_cs_concept_input_esc.json. OK.
+- The skill ships a non-trivial pair of Python scripts plus a soffice helper, same
+  as the safety-side builders. Out of scope for description-polish, but worth noting
+  that the CAL inheritance logic in `generate_cs_concept.py` is the one piece a
+  human reviewer should re-validate against ISO/SAE 21434 §15 next time the file
+  comes up — the SKILL.md asserts "If a node is allocated multiple CSRs from
+  different CSGs, its CAL is the maximum" and that should match what the script does.
+- The CSI-handoff tab is described as "placeholder cybersecurity implementation
+  requirement rows" — that wording is fine, but a future docs pass should make
+  clear that the CSI is its own SDLC artefact (not produced by this skill), so the
+  rows here are intentionally skeleton-only. Not a polish item — a docs item.
+
+### Severity roll-up
+
+| Finding | Severity | Action |
+|---|---|---|
+| `CAL allocation` absent from description | low | proposed rewrite drafted; await human review |
+| `CSR derivation` outside first 400 chars | low | folded into the same rewrite |
+| Casual framings thin / not verbatim | low (optional) | included in the proposed rewrite |
+| `CSI handoff` plain form absent | low (optional) | included in the proposed rewrite |
+
+**No code edits committed in this run.** Issue #4 stays open with this log linked
+from the journal entry. Next autonomous touch on this skill: probably W21 if it
+stays in the LRT bucket, otherwise close on human approval of the rewrite. The
+pattern (description hits AAICAN cleanly but misses one or two formal trigger
+phrases in the first 400 chars) is now the second consecutive POLISH finding —
+`hara-builder` (W20-T1, Tue) and `cs-concept-builder` (W20-T2, today) both shipped
+this same shape. Worth flagging in the next PLAN as a suite-wide DoD audit
+candidate rather than per-skill chasing.

@@ -38,3 +38,22 @@ _Maintained by `automotive-skills-daily-standup` scheduled task._
 - Human review: if the proposed `hara-builder` description rewrite looks right, ship it as a manual commit and close #3. If it doesn't, leave a comment on #3 and I'll re-touch with the corrected direction next week.
 - Future hardening: bake the four extra safety-domain prefixes (`dia/fmeda/hsi/item-definition`) into a constants file so the classifier doesn't drift again on the next regeneration script tweak.
 - Issue #2 ("goodd") still needs Sunday TRIAGE — still too low-confidence to label.
+
+
+## 2026-05-13 (autonomous run, POLISH)
+
+**Mode:** POLISH
+**Action:** Regenerated STATUS.md and ran second POLISH pass on `cs-concept-builder.skill` (W20 issue #4). Wrote `docs/skill-polish-log/cs-concept-builder.md` with four low-severity findings and a drafted ≤1024-char description rewrite. No `.skill` edits applied — none of the findings matched the autonomous-edit allowlist (typo / over-length / missing required field).
+**Files touched:**
+- `STATUS.md` (regenerated — only the header date changed; classifier produced byte-identical body to yesterday's, confirming the prefix ordering fix for `safety-program-` / `safety-gate-` → `program-mgmt` is now stable)
+- `docs/skill-polish-log/cs-concept-builder.md` (new)
+- `docs/AUTONOMOUS_LOG.md` (this entry)
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 76 builders / 76 reviewers / 100.0% paired (aliases honored: `item-definition-builder ↔ item-def-checklist-reviewer`, `ppap-package-builder ↔ ppap-checklist-reviewer`)
+**Open issues:** 5 (#2 untriaged + #3–#6 W20 weekly targets — unchanged from yesterday)
+**Notes:** POLISH priority order ran the same as Tuesday: no `skill-bug` / `reviewer-finding` issues open, no orphan builders, so the next W20 issue (#4 `cs-concept-builder.skill`) was the target. The skill is in genuinely good shape — AAICAN list correct and complete in canonical order inside the first 400 chars (the DoD "accuracy" check); 784/1024 description chars with ~240 chars of headroom; mentor-quality common-pitfalls section; upstream/downstream pipeline linkage (cs-goals-builder → here → CSI) named explicitly. Findings are all low-severity trigger-coverage gaps: `CAL allocation` absent, `CSR derivation` at char 607 (outside the asked-for 400-char window), casual framings thin, and `CSI handoff` only present with the parenthetical gloss. A drafted rewrite is in the polish log; not auto-applied because editorial trigger-reordering is outside the autonomous-edit allowlist. This is now the **second consecutive POLISH finding** with the same shape — AAICAN/HARA fundamentals fine, but one or two formal trigger phrases land past the 400-char threshold. Calling it out in the follow-ups for the W21 PLAN to consider a suite-wide DoD audit rather than per-skill chasing.
+**Follow-ups:**
+- Tomorrow (Thu): POLISH issue #5 — `aspice-assessment-builder.skill`. Confirm the 13-tab list in the description matches the actual builder schema, and trigger list mentions both v3.1 and v4.0.
+- **Suite-wide pattern emerging:** two-for-two POLISH passes have flagged "formal trigger phrase outside first 400 chars" as the dominant finding. W21 PLAN should consider scripting a once-per-week DoD audit across all 76 builders that emits a shortlist of "descriptions where the canonical trigger phrase falls past char 400", instead of catching one per Tuesday.
+- Human review: if the proposed `cs-concept-builder` description rewrite looks right, ship it as a manual commit and close #4. Same posture as #3 from yesterday.
+- Issue #2 ("goodd") still needs Sunday TRIAGE — still too low-confidence to label.
