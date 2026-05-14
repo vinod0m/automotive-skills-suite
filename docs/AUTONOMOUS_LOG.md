@@ -57,3 +57,23 @@ _Maintained by `automotive-skills-daily-standup` scheduled task._
 - **Suite-wide pattern emerging:** two-for-two POLISH passes have flagged "formal trigger phrase outside first 400 chars" as the dominant finding. W21 PLAN should consider scripting a once-per-week DoD audit across all 76 builders that emits a shortlist of "descriptions where the canonical trigger phrase falls past char 400", instead of catching one per Tuesday.
 - Human review: if the proposed `cs-concept-builder` description rewrite looks right, ship it as a manual commit and close #4. Same posture as #3 from yesterday.
 - Issue #2 ("goodd") still needs Sunday TRIAGE — still too low-confidence to label.
+
+
+## 2026-05-14 (autonomous run, POLISH)
+
+**Mode:** POLISH
+**Action:** Regenerated STATUS.md and ran third POLISH pass on `aspice-assessment-builder.skill` (W20 issue #5). Wrote `docs/skill-polish-log/aspice-assessment-builder.md` with the DoD verdict, four low-severity findings, and a drafted ≤1024-char description rewrite. No `.skill` edits applied — none of the findings matched the autonomous-edit allowlist (typo / over-length / missing required field).
+**Files touched:**
+- `STATUS.md` (regenerated — no skill files changed since 2026-05-13: same 152 files, same git last-touched dates, same classifier + alias map, so the body is byte-identical and only the generation-date header advanced)
+- `docs/skill-polish-log/aspice-assessment-builder.md` (new)
+- `docs/AUTONOMOUS_LOG.md` (this entry)
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 76 builders / 76 reviewers / 100.0% paired (aliases honored: `item-definition-builder ↔ item-def-checklist-reviewer`, `ppap-package-builder ↔ ppap-checklist-reviewer`)
+**Open issues:** 5 (#2 untriaged + #3–#6 W20 weekly targets — unchanged from yesterday)
+**Notes:** POLISH priority order ran the same as Tue/Wed: no `skill-bug` / `reviewer-finding` issues open, and STATUS shows no true orphan builders (the two known naming aliases are honored), so the next W20 issue (#5 `aspice-assessment-builder.skill`) was the target. **DoD check 1 passes cleanly** — I diffed the SKILL.md "Output structure (13 tabs)" table against the `tabs` list in `scripts/generate_aspice_assessment.py` and all 13 entries match one-for-one in order, and the frontmatter's "Produces 13 tabs including ..." enumeration names only real tabs with a correct count. **DoD check 2 is a partial miss** — v3.1/v4.0 appear in the description's opening clause but not in the "Use this skill whenever..." trigger list. Two side findings: the bundled `references/` files are never read by any workflow step, and there is no v4.0 reference file despite the v3.1/v4.0 claim. A drafted description rewrite is in the polish log; not auto-applied because trigger-reordering is editorial, outside the allowlist. This is now the **third consecutive POLISH pass** flagging the same shape (fundamentals sound, one formal trigger phrase outside the active trigger list).
+**Follow-ups:**
+- Tomorrow (Fri) is DOCS mode, not POLISH — issue #6 (`8d-problem-solving-builder.skill`, the last W20 target) will not get an autonomous POLISH pass this week. Flagging so the W21 PLAN either re-lists it or a human picks it up; otherwise #6 closes the week unworked.
+- **Suite-wide pattern confirmed (3/3):** every POLISH pass this week — #3 hara ("safety goal"), #4 cs-concept ("CSR derivation"/"CAL allocation"), #5 aspice ("v3.1/v4.0") — found a canonical trigger phrase living outside the active trigger list. W21 PLAN should make a scripted once-per-week trigger-coverage audit across all 76 builders a first-class target instead of catching one per Tuesday/Wednesday/Thursday.
+- Human review: if the proposed `aspice-assessment-builder` description rewrite looks right, ship it as a manual commit and close #5. Same posture as #3/#4.
+- Repackaging note for a human pass: `aspice-assessment-builder.skill` carries a stray empty `.placeholder` file and is missing a v4.0 reference doc — both worth fixing the next time the archive is rebuilt.
+- Issue #2 ("goodd") still needs Sunday TRIAGE — still too low-confidence to label.
