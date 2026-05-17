@@ -113,3 +113,18 @@ _Maintained by `automotive-skills-daily-standup` scheduled task._
 - Verify tomorrow's TRIAGE run still sees `v2026.05.W20` on origin and that the human has had a chance to click Publish on the GitHub Release.
 - No action on issues this run (TRIAGE is the right venue, not RELEASE re-run).
 - Worth a one-line note on the human side: scheduled task fired twice today. If that was unintentional, the cadence-runner config probably needs a "skip if already ran today" guard.
+
+## 2026-05-17 (autonomous run, TRIAGE)
+
+**Mode:** TRIAGE
+**Action:** Bootstrapped full label taxonomy (17 new labels), triaged 5 open issues, regenerated STATUS.md, fixed one missing-pair alias.
+**Files touched:** STATUS.md, docs/AUTONOMOUS_LOG.md
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 76 builders / 76 reviewers / 100.0% paired
+**Open issues:** 5 (4 weekly-target, 1 needs-triage)
+**Notes:** Added the issue-type labels (skill-bug, reviewer-finding, description-quality, new-skill, docs, ci, chain-break, needs-triage) plus the missing domain labels (autosar, comms, diagnostics, calibration, mbse, sysml, vv, program-mgmt, sotif) so future triage runs have somewhere to write. Issues #3-#6 are the W20 weekly targets and were already correctly labeled by Monday's PLAN run — no relabel needed; #3 hara, #4 cs-concept, #5 aspice-assessment were polished earlier this week per commit log; #6 (8d-problem-solving) is still outstanding. Issue #2 ("goodd", empty body) flagged `needs-triage` with a short comment surfacing it for human review — confidence well below 80% to bucket it as bug vs new-skill vs invalid. Only classifier change this run: added the alias `ppap-package-builder ↔ ppap-checklist-reviewer` (irregular file naming, factual missing-pair fix that takes paired ratio from 75/76 to 76/76). I also briefly added `msa-*`/`spc-*` to the quality domain regex, then reverted it: yesterday's RELEASE re-run explicitly deferred all domain reclassification to the W21 PLAN, and respecting that deferral matters more than a 2-row cosmetic improvement. STATUS body is therefore identical to yesterday in every cell except the one previously-🔴 ppap-package row, which is now 🟢.
+**Follow-ups:**
+- W21 PLAN (Mon) should add a target: "freeze the STATUS classifier — write `scripts/classify_skill.py` implementing the spec literally with an explicit override table for irregular names (`item-definition`, `ppap-package` already in the alias map)". This is the third TRIAGE/RELEASE entry in a row flagging classifier drift; it's overdue.
+- 8d-problem-solving polish (issue #6) carries from W20 to W21.
+- Issue #2 needs a human glance — close as invalid or expand body.
+- Consider a CONTRIBUTING.md section documenting the label taxonomy now that it's complete.
