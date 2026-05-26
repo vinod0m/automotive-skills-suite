@@ -1,6 +1,6 @@
 # STATUS — automotive-skills-suite
 
-_Auto-generated 2026-05-25 by automotive-skills-daily-standup (PLAN run)._
+_Auto-generated 2026-05-26 by automotive-skills-daily-standup (POLISH run)._
 
 | Builder | Domain | Paired Reviewer | Last Touched | Flag |
 |---|---|---|---|---|
@@ -55,9 +55,9 @@ _Auto-generated 2026-05-25 by automotive-skills-daily-standup (PLAN run)._
 | pfmea-builder.skill | quality | pfmea-checklist-reviewer.skill | 2026-05-01 | 🟢 paired & touched ≤30 days |
 | ppap-package-builder.skill | quality | ppap-checklist-reviewer.skill | 2026-05-01 | 🟢 paired & touched ≤30 days |
 | safety-case-builder.skill | safety | safety-case-checklist-reviewer.skill | 2026-05-01 | 🟢 paired & touched ≤30 days |
-| safety-gate-review-builder.skill | program-mgmt | safety-gate-review-checklist-reviewer.skill | 2026-05-02 | 🟢 paired & touched ≤30 days |
+| safety-gate-review-builder.skill | safety | safety-gate-review-checklist-reviewer.skill | 2026-05-02 | 🟢 paired & touched ≤30 days |
 | safety-plan-builder.skill | safety | safety-plan-checklist-reviewer.skill | 2026-05-01 | 🟢 paired & touched ≤30 days |
-| safety-program-risk-register-builder.skill | program-mgmt | safety-program-risk-register-checklist-reviewer.skill | 2026-05-02 | 🟢 paired & touched ≤30 days |
+| safety-program-risk-register-builder.skill | safety | safety-program-risk-register-checklist-reviewer.skill | 2026-05-02 | 🟢 paired & touched ≤30 days |
 | secure-coding-guidelines-builder.skill | cyber | secure-coding-guidelines-checklist-reviewer.skill | 2026-05-01 | 🟢 paired & touched ≤30 days |
 | sotif-analysis-builder.skill | sotif | sotif-analysis-checklist-reviewer.skill | 2026-05-01 | 🟢 paired & touched ≤30 days |
 | sotif-validation-strategy-builder.skill | sotif | sotif-validation-strategy-checklist-reviewer.skill | 2026-05-01 | 🟢 paired & touched ≤30 days |
@@ -87,4 +87,4 @@ _Auto-generated 2026-05-25 by automotive-skills-daily-standup (PLAN run)._
 - Total reviewers: 76
 - Paired: 76 / 76 (100%)
 - 🟢 76 paired & fresh · 🟡 0 stale (30+ days) · 🔴 0 orphan builders
-- Generated 2026-05-25 — next refresh on the following autonomous run.
+- Generated 2026-05-26 — next refresh on the following autonomous run.

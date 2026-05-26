@@ -263,3 +263,18 @@ Standout finding is non-DoD and more impactful than the trigger gaps: the SKILL.
 - Consider closing stale polish issues #6/#7/#8 — their commits landed in W21 but issues stayed open.
 - Triage or close issue #2 ("goodd") — clearly junk.
 - Decide whether tooling issues #10/#11 belong in a weekly plan or a separate backlog.
+
+## 2026-05-26 (autonomous run, POLISH)
+
+**Mode:** POLISH
+**Action:** Executed W22 polish target #1 (uds-services-builder) — frontmatter description rewritten from 285→953 chars with broader triggers + sibling-skill redirects; body trigger sentence aligned.
+**Files touched:** skills/uds-services-builder.skill (inner SKILL.md only), docs/skill-polish-log/uds-services-builder.md, STATUS.md, docs/AUTONOMOUS_LOG.md
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 76 builders / 76 reviewers / 100% paired
+**Open issues:** 11
+**Notes:** Picked uds-services as today's target per W22 priority order — it has been the #1 carryover for two weeks (issue #9 open since W21, never serviced) and was the only W22 polish target with no existing polish-log entry. The frontmatter description previously ended on the boilerplate trigger "Use this skill when the user mentions uds services builder" — i.e. the classifier had nothing to anchor on beyond the literal skill name. New description names DIDs, RIDs, SecurityAccess, NRC, P2/P2*/S3 timing, the three session types, the 0x10-0x86 service range, three casual phrasings, and explicit sibling redirects to odx-builder / cdd-builder / dtc-catalog-builder / dem-config-builder so the classifier can route correctly across the diagnostics neighbourhood. Rebuilt the .skill zip preserving the four sibling scripts byte-for-byte (only SKILL.md changed). STATUS regen: hit the prior-run override edge case again where item-definition→item-def and ppap-package→ppap need explicit pairing overrides; preserved both to keep the 76/76 paired headline intact.
+**Follow-ups:**
+- Tomorrow (Wed): W22 target #2 hara-builder.skill (issue #3, three-week carryover).
+- Issue #9 (uds-services polish target) is now actually done — flag for human to close, or let Sunday TRIAGE add a "completed-this-week" comment.
+- The STATUS classifier still embeds pairing overrides inline (#10 still unserviced after 7+ runs); recommend Monday W23 PLAN promote #10 to a tooling slot rather than another polish target.
+- Worth a symmetric pass on uds-services-checklist-reviewer.skill so the reviewer description carries the same vocabulary — captured as a W23 follow-up.
