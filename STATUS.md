@@ -1,6 +1,6 @@
 # STATUS — automotive-skills-suite
 
-_Auto-generated 2026-05-26 by automotive-skills-daily-standup (POLISH run)._
+_Auto-generated 2026-05-27 by automotive-skills-daily-standup (POLISH run)._
 
 | Builder | Domain | Paired Reviewer | Last Touched | Flag |
 |---|---|---|---|---|
@@ -75,7 +75,7 @@ _Auto-generated 2026-05-26 by automotive-skills-daily-standup (POLISH run)._
 | traceability-matrix-builder.skill | v&v | traceability-matrix-checklist-reviewer.skill | 2026-05-02 | 🟢 paired & touched ≤30 days |
 | triggering-conditions-builder.skill | sotif | triggering-conditions-checklist-reviewer.skill | 2026-05-01 | 🟢 paired & touched ≤30 days |
 | tsc-builder.skill | safety | tsc-checklist-reviewer.skill | 2026-05-01 | 🟢 paired & touched ≤30 days |
-| uds-services-builder.skill | diagnostics | uds-services-checklist-reviewer.skill | 2026-05-02 | 🟢 paired & touched ≤30 days |
+| uds-services-builder.skill | diagnostics | uds-services-checklist-reviewer.skill | 2026-05-26 | 🟢 paired & touched ≤30 days |
 | validation-plan-builder.skill | v&v | validation-plan-checklist-reviewer.skill | 2026-05-02 | 🟢 paired & touched ≤30 days |
 | verification-plan-builder.skill | v&v | verification-plan-checklist-reviewer.skill | 2026-05-02 | 🟢 paired & touched ≤30 days |
 | vv-execution-report-builder.skill | v&v | vv-execution-report-checklist-reviewer.skill | 2026-05-02 | 🟢 paired & touched ≤30 days |
@@ -83,8 +83,8 @@ _Auto-generated 2026-05-26 by automotive-skills-daily-standup (POLISH run)._
 
 ## Summary
 
-- Total builders: 76
-- Total reviewers: 76
-- Paired: 76 / 76 (100%)
-- 🟢 76 paired & fresh · 🟡 0 stale (30+ days) · 🔴 0 orphan builders
-- Generated 2026-05-26 — next refresh on the following autonomous run.
+- **Builders:** 76
+- **Reviewers:** 76
+- **Paired:** 76/76 (100%)
+- **🟢 Recent (≤30d):** 76  •  **🟡 Stale (>30d):** 0  •  **🔴 Orphan:** 0
+- **Domains represented:** 14

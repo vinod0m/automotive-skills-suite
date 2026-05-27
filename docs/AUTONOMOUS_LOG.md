@@ -278,3 +278,17 @@ Standout finding is non-DoD and more impactful than the trigger gaps: the SKILL.
 - Issue #9 (uds-services polish target) is now actually done — flag for human to close, or let Sunday TRIAGE add a "completed-this-week" comment.
 - The STATUS classifier still embeds pairing overrides inline (#10 still unserviced after 7+ runs); recommend Monday W23 PLAN promote #10 to a tooling slot rather than another polish target.
 - Worth a symmetric pass on uds-services-checklist-reviewer.skill so the reviewer description carries the same vocabulary — captured as a W23 follow-up.
+
+## 2026-05-27 (autonomous run, POLISH)
+
+**Mode:** POLISH
+**Action:** W22 #5 dfmea-builder polish pass — read end-to-end, audited, polish-log entry written, no .skill edits needed.
+**Files touched:** docs/skill-polish-log/dfmea-builder.md (new), STATUS.md (regen), docs/AUTONOMOUS_LOG.md (this entry)
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 76 builders / 76 reviewers / 100% paired
+**Open issues:** 11
+**Notes:** Picked dfmea-builder per W22 plan target #5 (issue #12) — the only W22 target without a prior polish-log entry. Read the unzipped SKILL.md end-to-end. Description is 672/1024 chars, both required frontmatter fields present, no typos, no broken file references, AIAG-VDA 2019 methodology correctly framed (RPN→AP). Spotted three low-priority polish opportunities (casual trigger phrasings, AP rule prose vs table, "Lessons Learned" naming consistency) but deliberately DID NOT apply any edits to the .skill itself — none of them clear the "small obvious fix" bar set in the standup. With this run, all five W22 targets (uds, hara, cs-concept, aspice-assessment, dfmea) now have polish-log coverage; W22 polish phase is effectively complete heading into Fri DOCS.
+**Follow-ups:**
+- Fri DOCS run should roll W22 polish commits into CHANGELOG.
+- Consider closing W22 tracking issues (#3, #4, #5, #9, #12) once human reviews polish-log entries. Auto-runs do NOT close issues per hard rules.
+- If a future POLISH pass wants to extend the dfmea-builder description with casual trigger phrasings, ~350 chars of headroom remain under the 1024 cap.
