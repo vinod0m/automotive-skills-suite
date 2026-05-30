@@ -6,6 +6,10 @@ from `[Unreleased]` into a dated section at each weekly release.
 
 ## [Unreleased]
 
+_No entries yet — W23 cycle starts Mon 2026-06-01._
+
+## [v2026.05.W22] — 2026-05-30
+
 ### Polish
 - **uds-services-builder** — W22 #1 polish pass; small fixes applied in-skill, findings logged to skill-polish-log, STATUS regenerated (`9850780`)
 - **dfmea-builder** — W22 #5 polish pass; findings logged to skill-polish-log, STATUS regenerated (`04482aa`)
@@ -13,8 +17,9 @@ from `[Unreleased]` into a dated section at each weekly release.
 
 ### Docs
 - W22 weekly plan published — targets: uds-services, hara, cs-concept, aspice-assessment, dfmea; carryover items from W20/W21 absorbed and 1 new tracking issue (#12) opened (`973c075`)
-- W22 example README stubs added for skills touched this week (uds-services-builder, hara-builder, dfmea-builder)
-- STATUS.md regen aliasing applied for `item-definition` ↔ `item-def-checklist-reviewer` and `ppap-package` ↔ `ppap-checklist-reviewer` so suite stays at 100% paired
+- W22 example README stubs added for skills touched this week (uds-services-builder, hara-builder, dfmea-builder) (`f9e63f9`)
+- STATUS.md regen aliasing applied for `item-definition` ↔ `item-def-checklist-reviewer` and `ppap-package` ↔ `ppap-checklist-reviewer` so suite stays at 100% paired (`f9e63f9`)
+- v2026.05.W22 weekly snapshot tagged; RELEASES.md updated with W22 section
 
 ## [v2026.05.W21] — 2026-05-23
 

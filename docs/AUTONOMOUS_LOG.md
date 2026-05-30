@@ -321,3 +321,18 @@ Standout finding is non-DoD and more impactful than the trigger gaps: the SKILL.
 - Saturday RELEASE run will cut tag `v2026.05.W22`, append RELEASES.md, and roll the [Unreleased] block into a dated section.
 - Two W22 carryover targets (cs-concept, aspice-assessment) still unaddressed — Mon PLAN should re-prioritize or close their tracking issues if no longer relevant.
 - Consider lifting the alias map into a small `tools/pairs.yaml` (or top-of-script constant) the next time STATUS regen changes, so reviewer name divergences are discoverable rather than buried in the helper script.
+
+## 2026-05-30 (autonomous run, RELEASE)
+
+**Mode:** RELEASE
+**Action:** Cut weekly snapshot `v2026.05.W22`: appended W22 section to RELEASES.md, rolled CHANGELOG `[Unreleased]` into a dated `[v2026.05.W22]` block, regenerated STATUS.md, pushed lightweight tag.
+**Files touched:** STATUS.md, RELEASES.md, CHANGELOG.md, docs/AUTONOMOUS_LOG.md
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 76 builders / 76 reviewers / 100% paired
+**Open issues:** 10
+**Notes:** Five commits this week (one plan, three polish, one docs) so the release was a real one, not the "quiet week" branch. Tag follows the established `v<YYYY>.<MM>.W<isoweek>` convention used for v2026.05.W20 and v2026.05.W21 (chose ISO-absolute week 22 over the standup spec's "Wn within month" wording to keep continuity with the prior two snapshots — flagging here in case the human prefers we switch the scheme on W23). RELEASES.md compare link points at v2026.05.W21..v2026.05.W22. Did NOT publish a GitHub Release object via API per hard rules — the tag is pushed and RELEASES.md is staged for the human to click Publish manually. Suite remains at 76/76 paired, no flag changes vs. W21, alias map is now data-driven inside the STATUS helper. The release commit itself adds STATUS/RELEASES/CHANGELOG/journal updates.
+**Follow-ups:**
+- Sun TRIAGE run should sweep the five W22 polish-target issues (#3 hara, #4 cs-concept, #5 aspice-assessment, #9 uds-services, #12 dfmea) and the two W21 carryover issues (#7 dbc, #8 autosar-swc) for stale comments and confirm labels are correct; do not close them — that is reserved for the human.
+- Mon W23 PLAN: cs-concept (#4) and aspice-assessment (#5) still need a W22-dated polish-log audit (skipped this week). Recommend they lead the W23 PLAN target list.
+- Issue #10 (classifier freeze) is the longest-open tooling item; W22 docs run got the alias map data-driven inside the helper, but the helper itself is still inline-Python per run. W23 PLAN should allocate ONE tooling slot to extract `scripts/classify_skill.py`.
+- Confirm with human whether to keep ISO-absolute W-numbering (W20/W21/W22…) or switch to per-month W-numbering as the standup spec literally says — if we switch on W23 the tag would become `v2026.06.W1` which would break alphanumeric continuity with the existing pair.

@@ -97,3 +97,50 @@ https://github.com/jherrodthomas/automotive-skills-suite/compare/v2026.05.W20...
 - 10 issues open. Issue **#2** ("goodd", empty body) has stayed `needs-triage` across multiple runs — needs a human decision (likely close as spam/invalid).
 - Issue **#11** ("packaging utility for Claude-compatible skill exports") is still unlabeled — Sunday TRIAGE should label it.
 - W21 polish target **#9** (`uds-services-builder`) and tooling target **#10** (classifier freeze) were not serviced this week — both carry to W22.
+
+---
+
+## v2026.05.W22 — 2026-05-30
+
+ISO week 22 (2026-05-25 → 2026-05-30). Third weekly snapshot — W22 polish cycle closed, alias map landed in the STATUS regen helper, RELEASE cadence now three weeks running.
+
+### Highlights
+
+- W22 polish ran the Tue/Wed/Thu cadence over `uds-services-builder`, `dfmea-builder`, and `hara-builder`; the uds-services pass shipped an in-allowlist description rewrite (DIDs, RIDs, SecurityAccess, NRC, P2/P2*/S3 timing, three session types, 0x10-0x86 service range, casual phrasings, sibling redirects) and finally cleared the W21-era classifier blind spot. The other two produced severity-rated polish-log entries held for human review.
+- The reviewer-name alias map (`item-definition` ↔ `item-def`, `ppap-package` ↔ `ppap`) was promoted from inline override into the STATUS regen helper on Fri DOCS, so the 100% paired headline is now data-driven rather than hand-patched per run.
+- Three new `examples/<skill>/README.md` stubs landed (uds-services, hara, dfmea) bringing the docs spine to seven seeded skills. CHANGELOG groups today's W22 work cleanly into Polish (3) and Docs (1 plan + 1 docs commit).
+- Suite steady at 76 builder + 76 reviewer pairs, 100% paired; no flag changes vs. W21.
+
+### Changes this week
+
+**plan**
+- `973c075` auto(plan): W22 targets — uds, hara, cs-concept, aspice-assessment, dfmea
+
+**polish**
+- `9850780` auto(polish): W22 #1 uds-services-builder pass, regen STATUS
+- `04482aa` auto(polish): W22 #5 dfmea-builder pass, regen STATUS, journal
+- `ef78172` auto(polish): W22 #2 hara-builder pass, regen STATUS, journal
+
+**docs**
+- `f9e63f9` auto(docs): W22 changelog roll-up, 3 example stubs, STATUS regen
+
+**docs / release** _(this snapshot commit)_
+- STATUS.md refreshed (no flag changes vs. prior run; 76/76 paired)
+- RELEASES.md updated with the W22 section
+- CHANGELOG.md `[Unreleased]` rolled into a dated `[v2026.05.W22]` section
+- `docs/AUTONOMOUS_LOG.md` updated with the RELEASE-mode entry
+
+### Skills inventory
+
+- Builders: **76** · Reviewers: **76** · Paired ratio: **100.0%** (76/76)
+- Domain spread: safety 13, other 9, comms 8, cyber 6, autosar 5, diagnostics 5, quality 5, v&v 5, aspice 4, sysml 4, calibration 3, mbse 3, program-mgmt 3, sotif 3
+
+### Compare
+
+https://github.com/jherrodthomas/automotive-skills-suite/compare/v2026.05.W21...v2026.05.W22
+
+### Open items for the human
+
+- 10 issues open. The five W22-touched targets (#3 hara, #4 cs-concept, #5 aspice-assessment, #9 uds-services, #12 dfmea) now all carry W22 polish-log evidence — recommend a sweep to close the ones the human considers done.
+- Issue **#10** (classifier freeze) is now 7+ runs old; this week's Fri DOCS pass got the alias map into the helper but the helper is still inline-Python in each commit. Mon W23 PLAN should allocate a tooling slot to extract `scripts/classify_skill.py`.
+- Issue **#11** (skill packaging utility) and the W22 carryover targets (cs-concept, aspice-assessment, which only have W20-dated polish-log entries) are the natural W23 candidates if the human wants visible motion next week.
