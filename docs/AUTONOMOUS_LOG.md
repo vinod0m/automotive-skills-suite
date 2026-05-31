@@ -336,3 +336,17 @@ Standout finding is non-DoD and more impactful than the trigger gaps: the SKILL.
 - Mon W23 PLAN: cs-concept (#4) and aspice-assessment (#5) still need a W22-dated polish-log audit (skipped this week). Recommend they lead the W23 PLAN target list.
 - Issue #10 (classifier freeze) is the longest-open tooling item; W22 docs run got the alias map data-driven inside the helper, but the helper itself is still inline-Python per run. W23 PLAN should allocate ONE tooling slot to extract `scripts/classify_skill.py`.
 - Confirm with human whether to keep ISO-absolute W-numbering (W20/W21/W22…) or switch to per-month W-numbering as the standup spec literally says — if we switch on W23 the tag would become `v2026.06.W1` which would break alphanumeric continuity with the existing pair.
+
+## 2026-05-31 (autonomous run, TRIAGE)
+
+**Mode:** TRIAGE
+**Action:** Reviewed all 10 open issues — labels already correct from prior PLAN runs; STATUS.md regenerated with alias-aware pair detection so ppap-package-builder and item-definition-builder no longer false-flag as orphans.
+**Files touched:** STATUS.md, docs/AUTONOMOUS_LOG.md
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 76 builders / 76 reviewers / 100% paired
+**Open issues:** 10 (all labeled, none stale)
+**Notes:** Today is Sunday, post-W22-release. Every open issue is a previously-planned weekly target (#3–#12) and already carries weekly-target + a domain label + (where applicable) description-quality or ci. None of the 10 issues are anywhere near the 30-day stale threshold — oldest update is 2026-05-18 (13 days). The only substantive change this run is improving the pair detection so the two known alias pairs (ppap-package↔ppap, item-definition↔item-def) classify as paired rather than orphan, matching the headline "100% paired" figure already used in W22 release notes.
+**Follow-ups:**
+- Monday W23 PLAN run should pick targets from the stale 🟡 cohort (38 builders untouched in 30+ days)
+- Issue #11 (skill-packaging utility) and #10 (freeze classify_skill.py) are tooling tasks — consider promoting one of them as a W23 target
+- The classifier logic now embedded in this run should eventually be extracted to scripts/classify_skill.py per issue #10
