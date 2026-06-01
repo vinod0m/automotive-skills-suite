@@ -350,3 +350,17 @@ Standout finding is non-DoD and more impactful than the trigger gaps: the SKILL.
 - Monday W23 PLAN run should pick targets from the stale 🟡 cohort (38 builders untouched in 30+ days)
 - Issue #11 (skill-packaging utility) and #10 (freeze classify_skill.py) are tooling tasks — consider promoting one of them as a W23 target
 - The classifier logic now embedded in this run should eventually be extracted to scripts/classify_skill.py per issue #10
+
+## 2026-06-01 (autonomous run, PLAN)
+
+**Mode:** PLAN
+**Action:** Published W23 plan with 5 targets (3 polish + 1 tooling + 1 polish): cs-concept and aspice-assessment as 4-week carryovers, scripts/classify_skill.py extraction as a long-overdue tooling slot, fmeda and tara as fresh stale-cohort picks. Opened issues #15 (fmeda) and #16 (tara); referenced existing issues #4, #5, #10 in place. Regenerated STATUS.md.
+**Files touched:** docs/weekly/WEEK-2026-W23.md (new), STATUS.md, docs/AUTONOMOUS_LOG.md
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 76 builders / 76 reviewers / 100% paired
+**Open issues:** 12 (was 10 — added #15, #16)
+**Notes:** First Monday of June. Two clean judgement calls. (1) Took the explicit advice from the W22 RELEASE and TRIAGE journal entries that cs-concept (#4) and aspice-assessment (#5) had to lead W23 — they have now slipped four consecutive weeks, longer than any other open polish issue. Leaving them un-prioritized again would have made the carryover unrecoverable. (2) Promoted #10 (extract scripts/classify_skill.py) into the W23 target list as the one tooling slot. Six consecutive standup runs have re-implemented the STATUS classifier inline; the alias map for ppap-package and item-definition is now data-driven within the inline helper but the helper itself is still ~50 lines copied each run. Without this extraction, the standup is one silent rule change away from drifting reviewer-pairing logic. Other note: when creating the two new issues the GitHub tracker returned #15 and #16 rather than the expected #13/#14 — the WEEK file was patched to match. The standup spec calls the release tag `vYYYY.MM.W<n>` with W = ISO week within current month; prior tags shipped as ISO-absolute (W20/W21/W22). Now that June starts, Sat RELEASE will hit this ambiguity head-on — flagging again so the human can call it on tag-cut day if not before.
+**Follow-ups:**
+- Tue/Wed/Thu POLISH runs (3 slots): in priority order pick targets #1 (cs-concept), #2 (aspice-assessment), then either #4 (fmeda) or #5 (tara). Target #3 (tooling) is fine to land on any POLISH day if time allows — it's a small refactor, not a per-skill audit.
+- Issues #11 (skill-packaging utility) and #7/#8 (W21 description-quality carryovers for dbc/autosar-swc) remain open but un-prioritized this week. If a future POLISH slot opens up, #11 is the higher-leverage tooling item.
+- W23 RELEASE (Sat 2026-06-06) needs a human ruling on tag scheme before tag-cut: `v2026.06.W23` (ISO-absolute, continuity) vs. `v2026.06.W1` (per-month, spec-literal). Default will be ISO-absolute unless the human says otherwise by Saturday.
