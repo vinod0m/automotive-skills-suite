@@ -1,6 +1,6 @@
 # STATUS — automotive-skills-suite
 
-_Auto-generated 2026-06-04 by automotive-skills-daily-standup._
+_Auto-generated 2026-06-05 by automotive-skills-daily-standup._
 
 | Builder | Domain | Paired Reviewer | Last Touched | Flag |
 |---------|--------|-----------------|--------------|------|
@@ -32,15 +32,15 @@ _Auto-generated 2026-06-04 by automotive-skills-daily-standup._
 | `dcm-builder.skill` | calibration | `dcm-checklist-reviewer.skill` | 2026-05-02 | 🟡 |
 | `dem-config-builder.skill` | diagnostics | `dem-config-checklist-reviewer.skill` | 2026-05-02 | 🟡 |
 | `dfmea-builder.skill` | quality | `dfmea-checklist-reviewer.skill` | 2026-05-01 | 🟡 |
-| `dia-builder.skill` | other | `dia-checklist-reviewer.skill` | 2026-05-01 | 🟡 |
+| `dia-builder.skill` | safety | `dia-checklist-reviewer.skill` | 2026-05-01 | 🟡 |
 | `dtc-catalog-builder.skill` | diagnostics | `dtc-catalog-checklist-reviewer.skill` | 2026-05-02 | 🟡 |
-| `fishbone-builder.skill` | other | `fishbone-checklist-reviewer.skill` | 2026-05-01 | 🟡 |
+| `fishbone-builder.skill` | quality | `fishbone-checklist-reviewer.skill` | 2026-05-01 | 🟡 |
 | `flexray-config-builder.skill` | comms | `flexray-config-checklist-reviewer.skill` | 2026-05-02 | 🟡 |
-| `fmeda-builder.skill` | other | `fmeda-checklist-reviewer.skill` | 2026-05-01 | 🟡 |
+| `fmeda-builder.skill` | safety | `fmeda-checklist-reviewer.skill` | 2026-05-01 | 🟡 |
 | `fsc-builder.skill` | safety | `fsc-checklist-reviewer.skill` | 2026-05-01 | 🟡 |
 | `gateway-routing-builder.skill` | comms | `gateway-routing-checklist-reviewer.skill` | 2026-05-02 | 🟡 |
 | `hara-builder.skill` | safety | `hara-checklist-reviewer.skill` | 2026-05-01 | 🟡 |
-| `hsi-builder.skill` | other | `hsi-checklist-reviewer.skill` | 2026-05-01 | 🟡 |
+| `hsi-builder.skill` | safety | `hsi-checklist-reviewer.skill` | 2026-05-01 | 🟡 |
 | `hw-architecture-builder.skill` | safety | `hw-architecture-checklist-reviewer.skill` | 2026-05-01 | 🟡 |
 | `hw-safety-reqs-builder.skill` | safety | `hw-safety-reqs-checklist-reviewer.skill` | 2026-05-01 | 🟡 |
 | `incident-response-plan-builder.skill` | cyber | `incident-response-plan-checklist-reviewer.skill` | 2026-05-01 | 🟡 |
@@ -50,7 +50,7 @@ _Auto-generated 2026-06-04 by automotive-skills-daily-standup._
 | `mbse-model-architecture-builder.skill` | mbse | `mbse-model-architecture-checklist-reviewer.skill` | 2026-05-02 | 🟡 |
 | `mbse-requirements-allocation-builder.skill` | mbse | `mbse-requirements-allocation-checklist-reviewer.skill` | 2026-05-02 | 🟡 |
 | `mbse-system-context-builder.skill` | mbse | `mbse-system-context-checklist-reviewer.skill` | 2026-05-02 | 🟡 |
-| `msa-gage-rr-builder.skill` | other | `msa-gage-rr-checklist-reviewer.skill` | 2026-05-01 | 🟡 |
+| `msa-gage-rr-builder.skill` | quality | `msa-gage-rr-checklist-reviewer.skill` | 2026-05-01 | 🟡 |
 | `odx-builder.skill` | diagnostics | `odx-checklist-reviewer.skill` | 2026-05-02 | 🟡 |
 | `pfmea-builder.skill` | quality | `pfmea-checklist-reviewer.skill` | 2026-05-01 | 🟡 |
 | `ppap-package-builder.skill` | quality | `ppap-checklist-reviewer.skill` | 2026-05-01 | 🟡 |
@@ -61,7 +61,7 @@ _Auto-generated 2026-06-04 by automotive-skills-daily-standup._
 | `secure-coding-guidelines-builder.skill` | cyber | `secure-coding-guidelines-checklist-reviewer.skill` | 2026-05-01 | 🟡 |
 | `sotif-analysis-builder.skill` | sotif | `sotif-analysis-checklist-reviewer.skill` | 2026-05-01 | 🟡 |
 | `sotif-validation-strategy-builder.skill` | sotif | `sotif-validation-strategy-checklist-reviewer.skill` | 2026-05-01 | 🟡 |
-| `spc-chart-builder.skill` | other | `spc-chart-checklist-reviewer.skill` | 2026-05-01 | 🟡 |
+| `spc-chart-builder.skill` | quality | `spc-chart-checklist-reviewer.skill` | 2026-05-01 | 🟡 |
 | `sw-arch-builder.skill` | safety | `sw-arch-checklist-reviewer.skill` | 2026-05-01 | 🟡 |
 | `sw-fmea-builder.skill` | safety | `sw-fmea-checklist-reviewer.skill` | 2026-05-01 | 🟡 |
 | `sw-hsis-builder.skill` | safety | `sw-hsis-checklist-reviewer.skill` | 2026-05-01 | 🟡 |
@@ -85,6 +85,6 @@ _Auto-generated 2026-06-04 by automotive-skills-daily-standup._
 
 - Builders: **76**, Reviewers: **76**, Paired ratio: **100.0%**
 - 🟢 Paired & fresh (≤30d): **2**  ·  🟡 Stale (>30d): **74**  ·  🔴 Orphan builders: **0**
-- Domain spread: safety=12, comms=8, quality=7, cyber=6, other=6, autosar=5, diagnostics=5, program-mgmt=5, v&v=5, aspice=4, sysml=4, calibration=3, mbse=3, sotif=3
-- Date: 2026-06-04
+- Domain spread: safety=15, quality=10, comms=8, cyber=6, autosar=5, diagnostics=5, program-mgmt=5, v&v=5, aspice=4, sysml=4, calibration=3, mbse=3, sotif=3
+- Date: 2026-06-05
 - Source: scan of `skills/` directory + `git log -1` per file.
