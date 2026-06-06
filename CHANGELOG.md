@@ -6,6 +6,10 @@ from `[Unreleased]` into a dated section at each weekly release.
 
 ## [Unreleased]
 
+_(empty — rolled into v2026.06.W23 on 2026-06-06)_
+
+## [v2026.06.W23] — 2026-06-06
+
 ### Polish
 - **cs-concept-builder** — W23 #1 polish pass (Tue 2026-06-02); W20 findings re-confirmed against unchanged archive, polish-log appended; no `.skill` edits (description rewrite outside autonomous allowlist) (`5b4b006`)
 - **tara-builder** — W23 #2 polish pass (Wed 2026-06-03); new polish-log entry with 1 medium-severity finding (Auto-rating Heuristics internal contradiction) + 3 low-severity items; no `.skill` edits (`22d6409`)
@@ -16,6 +20,7 @@ from `[Unreleased]` into a dated section at each weekly release.
 - W23 example README stubs added for skills touched this week (cs-concept-builder, tara-builder, fmeda-builder) (this commit)
 - W23 CHANGELOG roll: 3 polish entries + 3 docs entries staged under `[Unreleased]` (this commit)
 - May 2026 monthly KPI report published — 23 commits, 24 distinct skills touched, 3 weekly releases, 100% paired ratio, 7.9% example coverage; SOTIF domain flagged zero-touch in May (`f8e940f`)
+- v2026.06.W23 weekly snapshot tagged; RELEASES.md updated with W23 section; STATUS regenerated
 
 ## [v2026.05.W22] — 2026-05-30
 

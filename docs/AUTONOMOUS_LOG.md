@@ -439,3 +439,19 @@ Standout finding is non-DoD and more impactful than the trigger gaps: the SKILL.
 - W24 PLAN (Mon 2026-06-08) should formally close out the W20-era carryovers (#4 cs-concept, #5 aspice-assessment): convert both into maintainer-PR targets rather than another polish loop. The polish log has carried ready-to-apply rewrites for 5+ consecutive weeks and Thursday's journal repeated the recommendation. Continuing to enqueue them as polish targets generates the same diff every week.
 - W24 PLAN should also pick at least one SOTIF target (sotif-analysis or triggering-conditions) — the May 2026 monthly KPI flagged SOTIF as the only zero-touch domain that month. A second zero-touch month would justify opening a tracking issue.
 - Classifier-extraction target (#10) still inline-Python after a 7th consecutive STATUS regen. The EXPLICIT map this week is now ~10 lines hand-maintained inline; if it grows again that's the canary for finally landing `scripts/classify_skill.py`.
+
+## 2026-06-06 (autonomous run, RELEASE)
+
+**Mode:** RELEASE
+**Action:** Tagged weekly snapshot `v2026.06.W23`, appended the W23 section to RELEASES.md, rolled CHANGELOG `[Unreleased]` into `[v2026.06.W23]`, regenerated STATUS.md.
+**Files touched:** RELEASES.md, CHANGELOG.md, STATUS.md, docs/AUTONOMOUS_LOG.md (this entry)
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 76 builders / 76 reviewers / 100% paired
+**Open issues:** 12
+**Notes:** Tag-scheme ruling executed as defaulted in Thu/Fri journals: ISO-absolute `v2026.06.W23` (clean continuation of the W20/W21/W22 series) rather than per-month-spec-literal `v2026.06.W1`; no human ruling arrived after four flags, and the per-month spelling can still be re-cut from the same SHA later. Verified `git tag -l` shows no collision before tagging. Release notes explicitly mark the three W23 polish findings (tara auto-rating contradiction; fmeda classification-ladder bug, SMvDU acronym, 100x unit suspicion) as UNAPPLIED — carried as W24 maintainer backlog, not shipped fixes. STATUS regen needed one classifier addition: `item-definition-builder` was falling to `other` under the prefix rules; added it to the explicit map as `safety` (it pairs with `item-def-checklist-reviewer` and is the ISO 26262-3 concept-phase entry artifact), restoring the canonical safety=15 / quality=10 spread — eighth consecutive run of inline classifier maintenance, reinforcing #10. No GitHub Release object published per hard rule; human clicks Publish after reviewing RELEASES.md.
+**Follow-ups:**
+- Mon W24 PLAN: convert #4 (cs-concept) and #5 (aspice-assessment) to maintainer-PR targets — polish logs have carried ready-to-apply rewrites for 3+ weeks.
+- Mon W24 PLAN: allocate the #10 tooling slot — land `scripts/classify_skill.py` with the now-9-entry explicit map (item-definition added this run).
+- Mon W24 PLAN: include at least one SOTIF target (sotif-analysis or triggering-conditions) — zero-touch in May per the monthly KPI; a second zero-touch month justifies a tracking issue.
+- Sun TRIAGE (tomorrow): confirm the 13 → 12 issue-count delta (presumed external close of #17) and refresh labels.
+- Fmeda medium findings need maintainer action, esp. the SMvDU source-check against ISO 26262-5:2018 Annex B.

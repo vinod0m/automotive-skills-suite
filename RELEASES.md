@@ -144,3 +144,52 @@ https://github.com/jherrodthomas/automotive-skills-suite/compare/v2026.05.W21...
 - 10 issues open. The five W22-touched targets (#3 hara, #4 cs-concept, #5 aspice-assessment, #9 uds-services, #12 dfmea) now all carry W22 polish-log evidence — recommend a sweep to close the ones the human considers done.
 - Issue **#10** (classifier freeze) is now 7+ runs old; this week's Fri DOCS pass got the alias map into the helper but the helper is still inline-Python in each commit. Mon W23 PLAN should allocate a tooling slot to extract `scripts/classify_skill.py`.
 - Issue **#11** (skill packaging utility) and the W22 carryover targets (cs-concept, aspice-assessment, which only have W20-dated polish-log entries) are the natural W23 candidates if the human wants visible motion next week.
+
+---
+
+## v2026.06.W23 — 2026-06-06
+
+ISO week 23 (2026-06-01 → 2026-06-06). Fourth weekly snapshot — first of June. Tag scheme ruling defaulted to ISO-absolute (`W23`, continuing the W20/W21/W22 series) after four unanswered flags; per-month spelling can be re-cut from the same SHA if a maintainer prefers.
+
+### Highlights
+
+- W23 polish cycle completed its three passes: `cs-concept-builder` (W20 findings re-confirmed), `tara-builder` (1 medium finding — Auto-rating Heuristics internal contradiction), and `fmeda-builder` (2 medium findings — Classification ladder unreachable branch; `SMvDU` non-standard acronym — plus a suspected 100× unit-convention discrepancy in the JSON example). **None of these were applied** — they are polish-log findings carried into the W24 maintainer backlog, not fixes in this snapshot.
+- May 2026 monthly KPI report published (23 commits, 24 distinct skills touched, 3 weekly releases, 100% paired ratio; SOTIF flagged as the only zero-touch domain in May).
+- Example-stub coverage rose from 7.9% (6/76) to 11.8% (9/76) with new stubs for cs-concept, tara, and fmeda.
+- Suite steady at 76 builder + 76 reviewer pairs, 100% paired; canonical domain classifier (Tue 2026-06-02 explicit map) re-applied, spread stable at safety=15 / quality=10.
+
+### Changes this week
+
+**plan**
+- `3af1f6b` auto(plan): W23 targets — cs-concept, aspice-assessment, classifier, fmeda, tara
+
+**polish**
+- `5b4b006` auto(polish): W23 #1 cs-concept-builder pass, regen STATUS, journal
+- `22d6409` auto(polish): W23 #2 tara-builder pass, regen STATUS, journal
+- `d6afa26` auto(polish): W23 #3 fmeda-builder pass, regen STATUS, journal
+
+**docs**
+- `f8e940f` auto(monthly): KPI report for May 2026
+- `c21a84a` auto(docs): W23 changelog roll, 3 example stubs, STATUS regen
+
+**docs / release** _(this snapshot commit)_
+- STATUS.md refreshed (76/76 paired; canonical spread; no flag changes vs. Fri)
+- RELEASES.md updated with the W23 section
+- CHANGELOG.md `[Unreleased]` rolled into a dated `[v2026.06.W23]` section
+- `docs/AUTONOMOUS_LOG.md` updated with the RELEASE-mode entry
+
+### Skills inventory
+
+- Builders: **76** · Reviewers: **76** · Paired ratio: **100.0%** (76/76)
+- Domain spread: safety 15, quality 10, comms 8, cyber 6, autosar 5, diagnostics 5, program-mgmt 5, v&v 5, aspice 4, sysml 4, calibration 3, mbse 3, sotif 3
+
+### Compare
+
+https://github.com/jherrodthomas/automotive-skills-suite/compare/v2026.05.W22...v2026.06.W23
+
+### Open items for the human
+
+- 12 issues open. The W20-era carryovers (#4 cs-concept, #5 aspice-assessment) have carried ready-to-apply rewrites in the polish log for 3+ weeks — recommend converting both to maintainer PRs in W24 PLAN rather than re-queuing as polish targets.
+- The fmeda medium findings (Classification ladder unreachable branch; SMvDU acronym needing an ISO 26262-5 Annex B source-check; 100× `distribution_pct` unit suspicion) are the highest-leverage maintainer items from W23 — see `docs/skill-polish-log/fmeda-builder.md`.
+- Issue **#10** (classifier extraction to `scripts/classify_skill.py`) is now 8 consecutive runs of hand-maintained inline Python — the explicit map grew again this week (`item-definition` → safety).
+- Issue count dropped 13 → 12 between Thu and Fri without autonomous action; presumed human/spam-filter close of #17 — Sun TRIAGE will confirm.
