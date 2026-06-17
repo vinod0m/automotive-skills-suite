@@ -500,3 +500,17 @@ Standout finding is non-DoD and more impactful than the trigger gaps: the SKILL.
 - Wed/Thu W24 picks: safety-case-builder (#21), control-plan-builder (#22), communication-matrix-builder (#23) — same least-recently-touched cohort.
 - Tooling debt #19 (classify_skill.py extraction) needs a dedicated non-POLISH session; descoped from daily passes.
 - Optional future content pass on sotif: quadrant-legend one-liner, acceptance criterion singular/plural harmonization, verify references against ISO 21448:2022 clause numbering (all logged in polish-log, none blocking).
+
+## 2026-06-17 (autonomous run, POLISH)
+
+**Mode:** POLISH
+**Action:** Polished safety-case-builder.skill (W24 target #3); regenerated STATUS.md; no code fix needed.
+**Files touched:** STATUS.md, docs/skill-polish-log/safety-case-builder.md, docs/AUTONOMOUS_LOG.md
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 76 builders / 76 reviewers / 100% paired
+**Open issues:** 0
+**Notes:** Wednesday POLISH. GitHub API reports 0 open issues, so the priority order fell through (a) issues and (b) orphans (none — suite is fully paired) to the W24 weekly plan, whose next un-done skill target after Tuesday's sotif pass is safety-case-builder (#21, ISO 26262-2 capstone, never polished). Audited it: description 577 chars (well under 1024), required frontmatter intact, and the 15 documented tabs match generate_safety_case.py exactly — no doc/generator drift. Only finding is cosmetic: the "Files in this skill" ASCII tree omits scripts/office/__init__.py. Chose NOT to repackage the .skill zip for a non-functional one-line tree fix; logged it as a low-severity follow-up instead. STATUS diff is just the date refresh (green=2: autosar-swc, uds-services; 74 stale).
+**Follow-ups:**
+- W25: rotate polish to the next stale safety builder; do not re-queue safety-case-builder.
+- Optional: land the __init__.py tree fix when a substantive repackage of safety-case-builder.skill is already warranted.
+- Remaining W24 skill targets: control-plan-builder (#22), communication-matrix-builder (#23); tooling slot scripts/classify_skill.py (#19) still open.
