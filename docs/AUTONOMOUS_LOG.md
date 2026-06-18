@@ -514,3 +514,17 @@ Standout finding is non-DoD and more impactful than the trigger gaps: the SKILL.
 - W25: rotate polish to the next stale safety builder; do not re-queue safety-case-builder.
 - Optional: land the __init__.py tree fix when a substantive repackage of safety-case-builder.skill is already warranted.
 - Remaining W24 skill targets: control-plan-builder (#22), communication-matrix-builder (#23); tooling slot scripts/classify_skill.py (#19) still open.
+
+## 2026-06-18 (autonomous run, POLISH)
+
+**Mode:** POLISH
+**Action:** Polished control-plan-builder.skill (former W24 target #22); applied one small in-place fix (sample characteristic count 18 -> 15) inside the .skill, re-zipped and re-verified; wrote first polish-log entry; regenerated STATUS.md.
+**Files touched:** STATUS.md, skills/control-plan-builder.skill, docs/skill-polish-log/control-plan-builder.md (new), docs/AUTONOMOUS_LOG.md
+**Tests:** N/A (no test suite in this repo yet); generator smoke-run executed against shipped sample before and after the edit (13 tabs, valid xlsx both times)
+**Skill count:** 76 builders / 76 reviewers / 100% paired
+**Open issues:** 0
+**Notes:** Thursday POLISH. GitHub API reports 0 open issues, so the priority chain fell through (a) skill-bug/reviewer-finding issues and (b) orphan builders (none — suite is fully paired) to the least-recently-touched cohort, all tied at the 2026-05-01 baseline. Broke the tie toward control-plan-builder: it was a stated W24 plan target (#22) that had never received a documented quality pass, the most defensible non-random pick. Unlike recent passes, a genuine mechanical fix existed: the "Sample Control Plan" prose claimed 18 characteristics but the shipped example JSON has 15 (confirmed by direct count and the generator's own run summary). That is a small, unambiguous, verifiable factual error — exactly the class POLISH permits in-place — so I corrected SKILL.md, repackaged the zip, and regenerated the workbook from the patched archive to confirm no regression (still 13 valid tabs). All other observations (illustrative special-class examples, thin mistake_proofing sample) are content-judgement calls and were logged, not applied. Note: STATUS still shows control-plan-builder at 2026-05-01 because STATUS reads committed git history and this edit is committed in the same pass; its last-touched will refresh to today on the next run.
+**Follow-ups:**
+- W25 next POLISH pick: communication-matrix-builder was the last remaining W24 skill target; rotate to it or to another 2026-05-01 stale builder. Do not re-queue control-plan-builder.
+- Tooling debt: scripts/classify_skill.py extraction (old #19) still descoped from daily POLISH passes — needs a dedicated non-POLISH session.
+- Optional content pass on control-plan-builder: add "(exemplars)" qualifier to the special-class narrative; deepen the mistake_proofing sample. Both low priority, logged in polish-log.
