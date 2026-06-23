@@ -584,3 +584,18 @@ Standout finding is non-DoD and more impactful than the trigger gaps: the SKILL.
 - Tue/Wed/Thu POLISH: work issues #27 → #28 → #29 in order.
 - Consider backfilling the missing WEEK-2026-W25.md or noting the gap permanently.
 - W27 PLAN should rotate into untouched domains: diagnostics, autosar, mbse, sysml, v&v, calibration, sotif, program-mgmt.
+
+## 2026-06-23 (autonomous run, POLISH)
+
+**Mode:** POLISH
+**Action:** Polished 5-why-builder (weekly-target #27) — confirmed valid frontmatter + pairing, added missing examples/5-why-builder/README.md stub, wrote polish log; regenerated STATUS.md.
+**Files touched:** STATUS.md, examples/5-why-builder/README.md, docs/skill-polish-log/5-why-builder.md, docs/AUTONOMOUS_LOG.md
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 76 builders / 76 reviewers / 100% paired
+**Open issues:** 5 (all weekly-target W26: #27–#31)
+**Notes:** Priority order yielded no skill-bug/reviewer-finding issues. The orphan-builder check surfaced item-definition-builder and ppap-package-builder, but both are paired under abbreviated reviewer names (item-def-checklist-reviewer, ppap-checklist-reviewer) — STATUS pairing logic now resolves those aliases, so true orphan count is 0 and the suite is 100% paired. Fell to priority (3) least-recently-touched, choosing 5-why-builder which is also weekly-target #27. The only substantive gap was the missing example README; fixed. SKILL.md has a harmless stray trailing '---' left untouched to avoid repackaging the .skill zip for a cosmetic-only change. STATUS shows 74 stale (last bulk touch 2026-05-01) — expected, since polish edits live in examples/ and docs/ rather than the .skill files themselves; the staleness flag tracks .skill mtime only.
+**Follow-ups:**
+- Issue #27 DoD now met (frontmatter/pairing validated, example stub added) — ready for human review/close.
+- Remaining W26 targets to polish Wed/Thu: #28 aspice-assessment-builder, #29 cs-concept-builder, #30 dia-builder, #31 communication-matrix-builder.
+- Cosmetic: strip trailing '---' from 5-why-builder SKILL.md on a pass that already repackages the archive.
+- Consider whether STATUS staleness should also consider examples/ and polish-log mtime so doc-only polish reflects in the flag.
