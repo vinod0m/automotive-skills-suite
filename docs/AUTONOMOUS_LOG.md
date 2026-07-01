@@ -716,3 +716,10 @@ Standout finding is non-DoD and more impactful than the trigger gaps: the SKILL.
 - Human: decide rename (`item-def-checklist-reviewer` → `item-definition-checklist-reviewer`) vs. STATUS-generator alias map for shortened-base pairs. Same for ppap pair.
 - If alias-map chosen, implement so the two false 🔴 flags clear and paired ratio reads 100%.
 - Consider a future POLISH pass on the 71 🟡 stale builders (all last touched 2026-05-01) once the pairing report is accurate.
+
+## 2026-07-01 (autonomous run, MONTHLY-KPI)
+
+**Action:** Generated docs/monthly/2026-06.md
+**Velocity:** 24 commits, 3 skill archives re-packaged (10 builders touched incl. polish-log/example commits)
+**Coverage:** 100% paired reviewers, 18.4% examples (14/76)
+**Notes:** Strong month operationally — the issue tracker went from 12 open to 0 (27 closed). Concentration risk is the headline: quality/safety/cyber got all the skill work while seven domains (diagnostics, autosar, calibration, mbse, program-mgmt, sysml, v&v) took zero skill-focused commits, and 71/76 builders remain frozen at the 2026-05-01 baseline.
