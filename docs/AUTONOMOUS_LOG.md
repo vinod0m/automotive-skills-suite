@@ -702,3 +702,17 @@ Standout finding is non-DoD and more impactful than the trigger gaps: the SKILL.
 - Consider opening a skill-bug issue for the 31-char tab names so it surfaces in the next POLISH priority pass.
 - 73 builders are now 30+ days stale (all at the 2026-05-01 baseline); steady-state, expected for a young repo.
 - NOTE for human: this week's W27 PLAN targets (issues #33–#37: odx, autosar-bsw-config, mbse-system-context, sysml-state-machine, traceability-matrix) were all **closed** without a POLISH pass. Since POLISH priority-1 requires an *open* issue, selection correctly fell through to least-recently-touched. If those targets still matter, reopen them or expect the chain to reach them by recency.
+
+## 2026-07-01 (autonomous run, POLISH)
+
+**Mode:** POLISH
+**Action:** Reviewed orphan-flagged `item-definition-builder`; wrote polish log; regenerated STATUS.md.
+**Files touched:** STATUS.md, docs/skill-polish-log/item-definition-builder.md, docs/AUTONOMOUS_LOG.md
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 76 builders / 76 reviewers / 97% paired
+**Open issues:** 0
+**Notes:** No open issues, so POLISH priority fell through to orphan builders. Two builders (`item-definition-builder`, `ppap-package-builder`) show as 🔴 in STATUS only because their reviewers use shortened bases (`item-def-`, `ppap-`) that strict `<base>-checklist-reviewer` matching misses — they are not truly unpaired. The `item-definition-builder` SKILL.md itself is clean (valid frontmatter, 333-char description, complete payload), so no in-file fix was warranted. Did NOT rename the reviewer: that is a repo-structure change with possible external-reference impact and needs a human decision. Recommended fix is a small alias/exception in the STATUS generator (Option B in the polish log) rather than a rename.
+**Follow-ups:**
+- Human: decide rename (`item-def-checklist-reviewer` → `item-definition-checklist-reviewer`) vs. STATUS-generator alias map for shortened-base pairs. Same for ppap pair.
+- If alias-map chosen, implement so the two false 🔴 flags clear and paired ratio reads 100%.
+- Consider a future POLISH pass on the 71 🟡 stale builders (all last touched 2026-05-01) once the pairing report is accurate.
