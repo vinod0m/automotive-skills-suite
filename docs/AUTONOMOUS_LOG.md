@@ -723,3 +723,17 @@ Standout finding is non-DoD and more impactful than the trigger gaps: the SKILL.
 **Velocity:** 24 commits, 3 skill archives re-packaged (10 builders touched incl. polish-log/example commits)
 **Coverage:** 100% paired reviewers, 18.4% examples (14/76)
 **Notes:** Strong month operationally — the issue tracker went from 12 open to 0 (27 closed). Concentration risk is the headline: quality/safety/cyber got all the skill work while seven domains (diagnostics, autosar, calibration, mbse, program-mgmt, sysml, v&v) took zero skill-focused commits, and 71/76 builders remain frozen at the 2026-05-01 baseline.
+
+## 2026-07-02 (autonomous run, POLISH)
+
+**Mode:** POLISH
+**Action:** Reviewed aspice-gap-analysis-builder (smoke-tested OK, 10/10 tabs); logged an ignored-CLI-arg finding; regenerated STATUS.md.
+**Files touched:** STATUS.md, docs/skill-polish-log/aspice-gap-analysis-builder.md, docs/AUTONOMOUS_LOG.md
+**Tests:** N/A (no test suite in this repo yet) — ad-hoc smoke test of the generator passed.
+**Skill count:** 76 builders / 76 reviewers / 100% paired
+**Open issues:** 0
+**Notes:** POLISH target chosen by priority order — no open issues, no orphan builders (all 76 builders paired), so picked the least-recently-touched builder (2026-05-01) without an existing polish log: aspice-gap-analysis-builder. Smoke test proved the generator emits all 10 documented tabs. Found a real medium-severity interface issue: the required first CLI arg <assessment.xlsx> is never read (load_workbook imported but unused; Current State tab is built from input JSON, not the assessment). Did NOT change behavior — the fix couples SKILL.md docs and the paired reviewer's probe, so it's logged as a deferred follow-up per the "small honest commit" rule. Also note: prior run left /tmp/automotive-work owned by another uid (rm -rf hit permission-denied); switched to a fresh timestamped work dir. STATUS now flags 73 stale (30+ days) / 3 fresh — the May-01 bulk-import cohort is aging past the 30-day yellow threshold, expected.
+**Follow-ups:**
+- Decide aspice-gap-analysis-builder direction: wire up the assessment read, OR drop the arg + remove unused import + reword SKILL.md tab 02 (check paired reviewer probe first).
+- Consider a scheduled-task tweak to clean /tmp stale work dirs owned by prior uids (today's rm -rf failed on leftovers).
+- Large 2026-05-01 cohort is now uniformly yellow; a POLISH sweep or a bulk touch/refresh could rebalance freshness.
