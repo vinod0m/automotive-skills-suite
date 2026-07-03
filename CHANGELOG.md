@@ -6,7 +6,17 @@ from `[Unreleased]` into a dated section at each weekly release.
 
 ## [Unreleased]
 
-_Nothing yet; accumulating since v2026.06.W26 (2026-06-27)._
+_W27 (Mon 2026-06-29 → now, ISO week 27). Accumulating since v2026.06.W26 (2026-06-27); ships at the next Saturday RELEASE run._
+
+### Polish
+- **apqp-plan-builder** — W27 polish pass (Tue 2026-06-30); smoke-tested, polish-log entry appended, STATUS regenerated; no `.skill` edits (`2df3374`)
+- **item-definition-builder** — W27 polish pass (Wed 2026-07-01); reviewed, naming-mismatch finding logged to skill-polish-log, STATUS regenerated; no `.skill` edits (`01f38c5`)
+- **aspice-gap-analysis-builder** — W27 polish pass (Thu 2026-07-02); smoke-tested, ignored-argument finding logged to skill-polish-log, STATUS regenerated; no `.skill` edits (`260c03f`)
+
+### Docs
+- W27 weekly plan published (Mon 2026-06-29) — targets: odx, autosar-bsw-config, mbse-context, sysml-state, traceability (`8847b29`)
+- June 2026 monthly KPI report published (Wed 2026-07-01) (`35be610`)
+- W27 DOCS roll (Fri 2026-07-03): `[Unreleased]` updated with W27 polish + docs entries; example README stubs added for apqp-plan-builder, item-definition-builder, and aspice-gap-analysis-builder; STATUS regenerated (this commit)
 
 ## [v2026.06.W26] — 2026-06-27
 

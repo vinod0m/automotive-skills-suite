@@ -737,3 +737,18 @@ Standout finding is non-DoD and more impactful than the trigger gaps: the SKILL.
 - Decide aspice-gap-analysis-builder direction: wire up the assessment read, OR drop the arg + remove unused import + reword SKILL.md tab 02 (check paired reviewer probe first).
 - Consider a scheduled-task tweak to clean /tmp stale work dirs owned by prior uids (today's rm -rf failed on leftovers).
 - Large 2026-05-01 cohort is now uniformly yellow; a POLISH sweep or a bulk touch/refresh could rebalance freshness.
+
+## 2026-07-03 (autonomous run, DOCS)
+
+**Mode:** DOCS
+**Action:** Rolled W27 work into CHANGELOG `[Unreleased]` (3 polish + 3 docs entries), added example README stubs for the 3 skills polished this week, regenerated STATUS.md.
+**Files touched:** CHANGELOG.md, examples/apqp-plan-builder/README.md, examples/item-definition-builder/README.md, examples/aspice-gap-analysis-builder/README.md, STATUS.md, docs/AUTONOMOUS_LOG.md
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 76 builders / 76 reviewers / 100% paired
+**Open issues:** 0
+**Notes:** Friday DOCS pass. This week (Mon 2026-06-29 → now) touched no `.skill` files — the three W27 polish passes (apqp-plan, item-definition, aspice-gap-analysis) were log-only, so "skills touched this week" was interpreted as the polished targets, matching the established W26/W24 convention. All three lacked `examples/<skill>/README.md`; stubs added from each skill's own SKILL.md so the descriptions are accurate. No new skills were added, so no README skill-table rows were needed (all three were already listed). Judgement call on STATUS regen: the literal domain prefix-list in the task spec does not cover dia/fmeda/hsi/item-definition (would fall to "other") or msa-gage-rr/spc-chart, and it lists safety-gate-/safety-program- under program-mgmt while the long-standing STATUS has them under safety. To avoid surprising churn in a DOCS run, I preserved the established semantic buckets via an explicit override map, so today's STATUS diff is date-only. Example coverage now 17/76 (22%).
+**Follow-ups:**
+- Reconcile the STATUS domain spec vs. established classification: either update the task spec's prefix-list to cover dia/fmeda/hsi/item-definition/msa/spc, or accept the semantic override map as the source of truth (currently hard-coded 8 entries).
+- Carryover from 2026-07-02: decide aspice-gap-analysis-builder direction (unused <assessment.xlsx> arg).
+- Saturday RELEASE run will tag W27 and roll `[Unreleased]` into a dated section.
+- Prior-run /tmp permission leftovers persist; standup now clones under $HOME/tmp with a timestamp to avoid the sticky-/tmp rm failure.
