@@ -780,3 +780,17 @@ Standout finding is non-DoD and more impactful than the trigger gaps: the SKILL.
 - Mon PLAN: consider filing an issue to normalize the two reviewer filenames (or add alias mapping in STATUS generator).
 - Continue POLISH rotation through 71 stale builders, least-recently-touched first.
 - If tracker stays empty, PLAN Monday should seed weekly-target issues as usual.
+
+## 2026-07-06 (autonomous run, PLAN)
+
+**Mode:** PLAN
+**Action:** W28 plan written with 5 targets; issues #38–#42 opened; STATUS.md regenerated.
+**Files touched:** STATUS.md, docs/weekly/WEEK-2026-W28.md, docs/AUTONOMOUS_LOG.md
+**Tests:** N/A (no test suite in this repo yet)
+**Skill count:** 76 builders / 76 reviewers / 97% paired (74/76 by strict name-match; the 2 "unpaired" are naming mismatches)
+**Open issues:** 5 (all created this run: #38–#42)
+**Notes:** Tracker was empty at start of run — W27 target issues #33–#37 are gone (presumed closed by the human) even though W27 polish commits worked different skills; flagged in the WEEK file for human confirmation. Slots 1–2 go to the two 🔴 name-mismatch pairs (item-definition, ppap-package) since orphans outrank staleness; slots 3–5 finally cover the never-polished calibration/sotif/program-mgmt domains. Judgement call: /tmp/automotive-work was left unwritable by a previous run's user, so this run used /tmp/automotive-work-20260706 — same pattern as yesterday; harmless but worth knowing.
+**Follow-ups:**
+- Tue POLISH: take #38 (item-def reviewer rename) — smallest, unblocks a STATUS red.
+- Wed POLISH: #39 (ppap reviewer rename). Thu POLISH: #40 (a2l-builder).
+- Human: confirm fate of closed W27 issues #33–#37.
