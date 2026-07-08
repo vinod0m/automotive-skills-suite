@@ -1,6 +1,6 @@
 # Skill Suite Status
 
-_Regenerated 2026-07-07 by autonomous daily run (POLISH)._
+_Regenerated 2026-07-08 by autonomous daily run (POLISH)._
 
 | Builder | Domain | Paired Reviewer | Last Touched | Flag |
 |---|---|---|---|---|
@@ -84,7 +84,7 @@ _Regenerated 2026-07-07 by autonomous daily run (POLISH)._
 ## Summary
 
 - Builders: 76 · Reviewers: 76 · Paired: 76/76 (100.0%)
-- 🔴 missing paired reviewer: 0 (alias pairs honored: item-definition→item-def-checklist-reviewer, ppap-package→ppap-checklist-reviewer)
+- 🔴 missing paired reviewer: 0 (alias pairs honored per docs/PAIRING_ALIASES.md: item-definition→item-def-checklist-reviewer, ppap-package→ppap-checklist-reviewer)
 - 🟡 not touched in 30+ days: 72
 - 🟢 paired & touched ≤30 days: 4
-- Freshest today: ppap-package-builder (sheet-title fix, POLISH 2026-07-07)
+- Freshest today: item-definition-builder polish-reviewed (no file change needed); alias registry landed (POLISH 2026-07-08)

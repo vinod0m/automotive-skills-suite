@@ -808,3 +808,17 @@ Standout finding is non-DoD and more impactful than the trigger gaps: the SKILL.
 - Coordinated builder+reviewer fix for tab 09 name (>31 chars) and Element-18 probe mismatch — good candidate for a chain-break issue at Sunday TRIAGE or next POLISH day
 - Human/PLAN decision on issue #38/#39: codify reviewer-name aliases in README vs. breaking rename of the two reviewer .skill files
 - Domain reclassification (5-why, 8d, fishbone → quality; msa, spc → quality) still deferred — put on next Monday PLAN agenda
+
+## 2026-07-08 (autonomous run, POLISH)
+
+**Mode:** POLISH
+**Action:** item-definition-builder polish pass — smoke test green, issue #38 resolved via alias-documentation path (docs/PAIRING_ALIASES.md created as canonical registry).
+**Files touched:** docs/PAIRING_ALIASES.md (new), docs/skill-polish-log/item-definition-builder.md (appended), STATUS.md (regenerated), docs/AUTONOMOUS_LOG.md
+**Tests:** N/A (no test suite in this repo yet) — informal: all 4 builder scripts py_compile clean; sample ESC generation produced the expected 11-tab workbook.
+**Skill count:** 76 builders / 76 reviewers / 100.0% paired (aliases per docs/PAIRING_ALIASES.md)
+**Open issues:** 5 (#38–#42, all W28 weekly-targets)
+**Notes:** Issue #38's DoD offered "rename or document alias"; chose the alias path because the rename requires repacking the reviewer zip (internal directory + frontmatter name) and would break installed copies and external references — exactly the change the 2026-07-01 polish entry deferred to a human. The alias map that five prior runs carried informally in the STATUS regen script is now a checked-in registry, so pairing logic can no longer silently drift. Retroactively covers issue #39's alias half as well (ppap sheet-title fix already landed 2026-07-07). Did not close or comment on #38 — issue writes are Sunday-TRIAGE/Monday-PLAN territory; human can close #38 (and arguably #39) on review. Also note: previous run's clone at /tmp/automotive-work was left root-owned and undeletable in this sandbox; worked from /tmp/auto-work-20260708 instead — harmless, but if it recurs the setup step may want a per-day workdir permanently.
+**Follow-ups:**
+- Remaining W28 targets for Thu POLISH: a2l-builder (#40) or sotif-analysis-builder (#41) or safety-program-risk-register-builder (#42) — all untouched since early May.
+- Human: review docs/PAIRING_ALIASES.md; if the alias decision stands, close #38 and #39.
+- Consider making the STATUS regen read the alias table from docs/PAIRING_ALIASES.md instead of a hard-coded dict (ties into the long-standing classify_skill.py extraction).
